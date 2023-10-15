@@ -1,6 +1,9 @@
 import "./css/globals.css";
 import type { Metadata } from "next";
 import Header from "./../components/Header";
+import { Urbanist } from 'next/font/google'
+
+const urbanist = Urbanist({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
 	title: "Hone | SmartYT",
@@ -14,7 +17,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="font-bodyFont bg-main-bg text-darkText">
+			<body className={`${urbanist.className} bg-main-bg text-darkText`}>
 				<Header />
 				{children}
 			</body>
