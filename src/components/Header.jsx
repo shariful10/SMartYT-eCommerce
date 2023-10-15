@@ -1,7 +1,8 @@
 import React from "react";
 import Container from "./Container";
 import Logo from "./Logo";
-import { IoMdCart } from 'react-icons/io'
+import { IoMdCart } from "react-icons/io";
+import { FiSearch } from "react-icons/fi";
 
 const Header = () => {
 	return (
@@ -9,7 +10,8 @@ const Header = () => {
 			<Container className="h-full flex items-center md:gap-x-5 justify-between md:justify-start">
 				<Logo />
 				{/* <===<<=== Search Field ===>>===> */}
-				<div>
+				<div className="w-full bg-white hidden md:flex items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-orange-600">
+					<FiSearch />
 					<input
 						type="text"
 						placeholder="Search for products"
