@@ -1,8 +1,13 @@
 import React from 'react'
+import Container from './Container'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div className='bg-bodyColor h-20'>
+      <Container>
+         <p>Logo</p>
+      </Container>
+    </div>
   )
 }
 
