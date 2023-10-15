@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+import { url } from "inspector";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -9,8 +10,17 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			backgroundImage: {
+				"main-bg": "url('/bg-img.jpeg')",
+			},
 			fontFamily: {
-				bodyFont: ["Urbanist", ...defaultTheme.fontFamily.sans]
+				bodyFont: ["Urbanist", ...defaultTheme.fontFamily.sans],
+			},
+			colors: {
+				bodyColor: "#FBFAF7",
+				bgLight: "#1010100D",
+				darkText: "#242424",
+				lightText: "#A5A5A5",
 			},
 		},
 	},
