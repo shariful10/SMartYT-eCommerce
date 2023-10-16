@@ -45,8 +45,8 @@ const Header = () => {
 				{session && (
 					<Image
 						src={session?.user?.image as string}
-						width={50} 
-						height={50}
+						width={45} 
+						height={45}
 						alt="User image"
 						className="rounded-full object-cover"
 					/>
