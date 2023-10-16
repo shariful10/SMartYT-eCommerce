@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Header from "./../components/Header";
 import { Inter } from "next/font/google";
 import Layout from "@/components/Layout";
+import "slick-carousel/slick/slick.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

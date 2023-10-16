@@ -10,12 +10,14 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
+    "@types/react-slick": "^0.23.10",
     "next": "13.5.4",
     "next-auth": "^4.23.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-slick": "^0.29.0"
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
