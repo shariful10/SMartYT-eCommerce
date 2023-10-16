@@ -1,43 +1,57 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
+import Image from "next/image";
 import Slider from "react-slick";
-import bannerone from "@/images/bannerone.jpg"
-import bannertwo from "@/images/bannertwo.jpg"
-import bannerthree from "@/images/bannerthree.jpg"
+import bannerone from "@/images/bannerone.jpg";
+import bannertwo from "@/images/bannertwo.jpg";
+import bannerthree from "@/images/bannerthree.jpg";
+import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi";
+import BannerText from "./BannerText";
 
 const Banner = () => {
-  let settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
+	const NextArrow = (props: any) => {
+		const { onClick } = props;
+		return (
+			<div>
+				<PiCaretLeftLight />
+			</div>
+		);
+	};
 
-  return (
-    <div>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
-    </div>
-  )
-}
+	const PrevArrow = (props: any) => {
+		const { onClick } = props;
+		return (
+			<div>
+				<PiCaretRightLight />
+			</div>
+		);
+	};
 
-export default Banner
+	let settings = {
+		speed: 500,
+		dots: false,
+		arrows: true,
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+	};
+
+	return (
+		<div className="relative">
+			<Slider {...settings}>
+				<div className="w-full h-full relative">
+					<Image
+						src={bannerone}
+						alt="Banner image"
+						className="w-full h-full relative"
+					/>
+					<BannerText title="Outware Picks" />
+				</div>
+			</Slider>
+		</div>
+	);
+};
+
+export default Banner;

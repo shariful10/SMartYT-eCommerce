@@ -11,6 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@types/react-slick": "^0.23.10",
+    "framer-motion": "^10.16.4",
     "next": "13.5.4",
     "next-auth": "^4.23.2",
     "react": "^18",

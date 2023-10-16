@@ -8,8 +8,8 @@ import "slick-carousel/slick/slick.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Hone | SmartYT",
-	description: "The shopping mart",
+	title: "Hone | SMartYT",
+	description: "The Shopping Mart",
 };
 
 export default function RootLayout({
