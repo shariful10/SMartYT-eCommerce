@@ -41,7 +41,10 @@ const Header = () => {
 				</div>
 				{/* <===<<=== Logout Button ===>>===> */}
 				{session && (
-					<div onClick={() => signOut()} className="headerDiv px-2 gap-x-1">
+					<div
+						onClick={() => signOut()}
+						className="headerDiv px-2 gap-x-1"
+					>
 						<FiLogOut className="text-2xl" />
 						<p className="text-sm font-semibold">Logout</p>
 					</div>
