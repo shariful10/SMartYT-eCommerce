@@ -6,6 +6,8 @@ import { IoMdCart } from "react-icons/io";
 import { FiSearch, FiLogOut } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
+// import Image from "next/image";
 
 const Header = () => {
 	const { data: session } = useSession();
@@ -39,6 +41,16 @@ const Header = () => {
 						0
 					</span>
 				</div>
+				{/* <===<<=== User Image ===>>===> */}
+				{session && (
+					<Image
+						src={session?.user?.image as string}
+						width={50} 
+						height={50}
+						alt="User image"
+						className="rounded-full object-cover"
+					/>
+				)}
 				{/* <===<<=== Logout Button ===>>===> */}
 				{session && (
 					<div
