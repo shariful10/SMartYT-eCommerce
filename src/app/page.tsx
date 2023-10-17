@@ -1,11 +1,15 @@
 import Banner from "@/components/Banner";
+import { getProducts } from "@/helpers";
 import React from "react";
 
-const Home = () => {
+const Home = async () => {
+	const products = await getProducts();
+	console.log(products);
+
 	return (
-		<div>
+		<main>
 			<Banner />
-		</div>
+		</main>
 	);
 };
 
