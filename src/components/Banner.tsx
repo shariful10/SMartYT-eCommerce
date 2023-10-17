@@ -55,7 +55,7 @@ const Banner = () => {
 						alt="Banner image"
 						className="w-full h-full relative"
 					/>
-					<BannerText title="Outware Picks" />
+					<BannerText title="Seassional Offers" />
 				</div>
 				<div className="w-full h-full relative">
 					<Image
