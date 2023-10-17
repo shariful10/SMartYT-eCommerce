@@ -1,8 +1,17 @@
+import { getProducts } from '@/helpers';
 import React from 'react'
+import Container from './Container';
+import ProductsData from './ProductsData';
 
-const Products = () => {
+const Products = async () => {
+    const products = await getProducts();
+    console.log(products);
   return (
-    <div>Products</div>
+    <Container>
+        {
+            products?.map((item, i) => <ProductsData key={i} />)
+        }
+    </Container>
   )
 }
 
