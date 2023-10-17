@@ -1,6 +1,10 @@
-import React from 'react'
+"use client"
 
-const ProductsData = () => {
+import { ItemProps } from "../../types";
+
+const ProductsData = ({item}: ItemProps) => {
+  console.log(item, 'Product');
+
   return (
     <div>ProductsData</div>
   )

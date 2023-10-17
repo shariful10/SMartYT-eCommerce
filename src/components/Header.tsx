@@ -11,7 +11,6 @@ import Image from "next/image";
 
 const Header = () => {
 	const { data: session } = useSession();
-	console.log(session);
 
 	return (
 		<div className="bg-bodyColor h-20 top-0 sticky z-50">
