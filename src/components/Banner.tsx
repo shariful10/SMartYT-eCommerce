@@ -49,6 +49,22 @@ const Banner = () => {
 					/>
 					<BannerText title="Outware Picks" />
 				</div>
+				<div className="w-full h-full relative">
+					<Image
+						src={bannertwo}
+						alt="Banner image"
+						className="w-full h-full relative"
+					/>
+					<BannerText title="Outware Picks" />
+				</div>
+				<div className="w-full h-full relative">
+					<Image
+						src={bannerthree}
+						alt="Banner image"
+						className="w-full h-full relative"
+					/>
+					<BannerText title="Outware Picks" />
+				</div>
 			</Slider>
 		</div>
 	);
