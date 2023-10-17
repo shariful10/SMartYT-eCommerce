@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ItemProps } from "../../types";
 import { calculatePercentage } from "@/helpers";
+import FormattedPrice from "./FormattedPrice";
 
 const ProductsData = ({ item }: ItemProps) => {
 	console.log(item, "Product");
@@ -25,9 +26,17 @@ const ProductsData = ({ item }: ItemProps) => {
 			</div>
 			<div className="border border-slate-300 border-t-0 px-2 py-4 flex flex-col gap-y-2 bg-white rounded-b-lg">
 				<p className="font-medium">{item?.title}</p>
-				<div className="">
+				<div className="flex items-center justify-between">
+					<div className="border border-orange-600 py-1 px-4 rounded-full text-xs">
+						<p>
+							{calculatePercentage(item?.price, item?.oldPrice)}%
+							Off
+						</p>
+					</div>
 					<div className="">
-						<p>{calculatePercentage(item?.price, item?.oldPrice)}% Off</p>
+						<p className="text-slate-500 line-through text-sm">
+							<FormattedPrice amount={item?.oldPrice} />
+						</p>
 					</div>
 				</div>
 			</div>
