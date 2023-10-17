@@ -63,7 +63,7 @@ const Banner = () => {
 						alt="Banner image"
 						className="w-full h-full relative"
 					/>
-					<BannerText title="Outware Picks" />
+					<BannerText title="Best For Men" />
 				</div>
 			</Slider>
 		</div>
