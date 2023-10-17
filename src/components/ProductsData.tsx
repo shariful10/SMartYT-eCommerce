@@ -14,7 +14,7 @@ const ProductsData = ({ item }: ItemProps) => {
 					width={500}
 					height={500}
 					alt="Product Image"
-					className="w-full h-full"
+					className="w-full h-full object-cover group-hover:scale-110 transition-all duration-200 rounded-t-lg"
 				/>
 			</div>
 		</div>
