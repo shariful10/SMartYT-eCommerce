@@ -37,8 +37,14 @@ const ProductsData = ({ item }: ItemProps) => {
 						<p className="text-slate-500 line-through text-sm">
 							<FormattedPrice amount={item?.oldPrice} />
 						</p>
-						<p className="font-semibold"><FormattedPrice amount={item?.price} /></p>
+						<p className="font-semibold">
+							<FormattedPrice amount={item?.price} />
+						</p>
 					</div>
+				</div>
+				<div className="flex items-center justify-between">
+					<button className="bg-orange-600 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-orange-700 hover:text-white duration-200">Add to Card</button>
+					<div>icon</div>
 				</div>
 			</div>
 		</div>
