@@ -16,6 +16,9 @@ const ProductsData = ({ item }: ItemProps) => {
 					alt="Product Image"
 					className="w-full h-full object-cover group-hover:scale-110 transition-all duration-200 rounded-t-lg"
 				/>
+				{
+					item.isNew && <span className="absolute top-2 right-2 font-semibold text-xs py-1 px-3 rounded-full bg-white duration-200 group-hover:bg-orange-600 transition-all group-hover:text-white">New Arrival</span>
+				}
 			</div>
 		</div>
 	);
