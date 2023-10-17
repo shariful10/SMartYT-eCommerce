@@ -22,10 +22,20 @@ const BannerText = ({ title }: Pops) => {
 					initial={{ y: 40, opacity: 0 }}
 					whileInView={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.6 }}
+					className="text-lg text-slate-100"
 				>
 					Stock up on sportwear and limited edition collections on our{" "}
 					<br /> awesome mid-season sale.
 				</motion.p>
+				<motion.div
+					initial={{ y: 50, opacity: 0 }}
+					whileInView={{ y: 0, opacity: 1 }}
+					transition={{ duration: 0.7 }}
+					className="flex gap-x-4 mt-2"
+				>
+					<button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white transition-all duration-200 text-sm uppercase">Find Out More</button>
+					<button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white transition-all duration-200 text-sm uppercase">Shop Now</button>
+				</motion.div>
 			</Container>
 		</div>
 	);
