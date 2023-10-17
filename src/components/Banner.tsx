@@ -2,12 +2,11 @@
 import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import BannerText from "./BannerText";
 import bannerone from "@/images/bannerone.jpg";
 import bannertwo from "@/images/bannertwo.jpg";
 import bannerthree from "@/images/bannerthree.jpg";
-// import { PiCaretLeftLight, PiCaretRightLight } from "react-icons/pi";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import BannerText from "./BannerText";
 
 const Banner = () => {
 	const NextArrow = (props: any) => {
@@ -73,6 +72,7 @@ const Banner = () => {
 					<BannerText title="Best For Men" />
 				</div>
 			</Slider>
+			<div className="absolute w-full h-44 bg-gradient-to-t from-gray-100 to-transparent bottom-0 left-0 z-10" />
 		</div>
 	);
 };
