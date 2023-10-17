@@ -4,9 +4,14 @@ import Image from "next/image";
 import { ItemProps } from "../../types";
 import { calculatePercentage } from "@/helpers";
 import FormattedPrice from "./FormattedPrice";
+import { IoIosStar } from "react-icons/io";
 
 const ProductsData = ({ item }: ItemProps) => {
-	console.log(item, "Product");
+	const starArray = Array.from({length: item?.rating}, (_, i) => (
+		<span key={i} className="text-yellow-400">
+			<IoIosStar />
+		</span>
+	));
 
 	return (
 		<div className="w-full rounded-lg overflow-hidden">
@@ -44,7 +49,7 @@ const ProductsData = ({ item }: ItemProps) => {
 				</div>
 				<div className="flex items-center justify-between">
 					<button className="bg-orange-600 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-orange-700 hover:text-white duration-200">Add to Card</button>
-					<div>icon</div>
+					<div className="flex items-center gap-x-1">{starArray}</div>
 				</div>
 			</div>
 		</div>
