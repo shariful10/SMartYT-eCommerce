@@ -8,9 +8,6 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: {
-				"main-bg": "url('/bg-img.jpeg')",
-			},
 			colors: {
 				bodyColor: "#FBFAF7",
 				bgLight: "#1010100D",
