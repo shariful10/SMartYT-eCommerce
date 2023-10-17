@@ -15,7 +15,7 @@ const ProductsData = ({ item }: ItemProps) => {
 
 	return (
 		<div className="w-full rounded-lg overflow-hidden">
-			<div className="w-full h-80 group overflow-hidden relative">
+			<div className="w-full h-72 group overflow-hidden relative">
 				<Image
 					src={item?.image}
 					width={500}
