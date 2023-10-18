@@ -2,6 +2,7 @@
 
 import React from "react";
 import Logo from "./Logo";
+import Link from "next/link";
 import Container from "./Container";
 import SocialIcons from "./SocialIcons";
 import payment from "@/images/payment.png";
@@ -41,21 +42,67 @@ const Footer = () => {
 					<p className="text-lg">Latest Posts</p>
 					<ul className="text-sm font-light mt-2 flex flex-col gap-y-2">
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">Where Music Is Headed Next</span>
-							<span className="text-blue-600">January 31, 2023</span>
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+								Where Music Is Headed Next
+							</span>
+							<span className="text-blue-600">
+								January 31, 2023
+							</span>
 						</li>
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">Sports Brand New Advertising Campaign</span>
-							<span className="text-blue-600">January 31, 2023</span>
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+								Sports Brand New Advertising Campaign
+							</span>
+							<span className="text-blue-600">
+								January 31, 2023
+							</span>
 						</li>
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">Snippets From The Tech Mobile Conference</span>
-							<span className="text-blue-600">January 31, 2023</span>
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+								Snippets From The Tech Mobile Conference
+							</span>
+							<span className="text-blue-600">
+								January 31, 2023
+							</span>
 						</li>
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">New Music Video Will Blow Your Minds</span>
-							<span className="text-blue-600">January 31, 2023</span>
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+								New Music Video Will Blow Your Minds
+							</span>
+							<span className="text-blue-600">
+								January 31, 2023
+							</span>
 						</li>
+					</ul>
+				</div>
+				<div>
+					<p className="text-lg">Quick Links</p>
+					<ul className="text-base font-medium mt-2 flex flex-col gap-y-2">
+						<Link href="/">
+							<li className="hover:text-blue-500 cursor-pointer duration-200">
+								Home
+							</li>
+						</Link>
+						<Link href="/">
+							<li className="hover:text-blue-500 cursor-pointer duration-200">
+								Cart
+							</li>
+						</Link>
+						<Link href="/">
+							<li className="hover:text-blue-500 cursor-pointer duration-200">
+								About
+							</li>
+						</Link>
+						<Link href="/">
+							<li className="hover:text-blue-500 cursor-pointer duration-200">
+								Newsletter
+							</li>
+						</Link>
+						<Link href="/">
+							<li className="hover:text-blue-500 cursor-pointer duration-200">
+								Contact
+							</li>
+						</Link>
 					</ul>
 				</div>
 			</Container>
