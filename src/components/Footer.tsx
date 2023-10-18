@@ -1,16 +1,16 @@
 import React from "react";
+import Logo from "./Logo";
+import Container from "./Container";
+import SocialIcons from "./SocialIcons";
 import payment from "@/images/payment.png";
+import { TbBrandFiverr } from "react-icons/tb"
+import { FaLinkedinIn } from "react-icons/fa";
 import {
 	BsGithub,
-	BsReddit,
 	BsTwitter,
 	BsLinkedin,
 	BsFacebook,
 } from "react-icons/bs";
-import Container from "./Container";
-import Logo from "./Logo";
-import Link from "next/link";
-import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
 	return (
@@ -23,9 +23,21 @@ const Footer = () => {
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Aliquam, molestias.
 						</p>
-						<div className="">
+						<div className="flex items-center gap-x-4">
+							<SocialIcons href="https://facebook.com/skshariful.islam.18">
+								<BsFacebook className="h-5 w-5" />
+							</SocialIcons>
 							<SocialIcons href="https://github.com/shariful10">
 								<BsGithub className="h-5 w-5" />
+							</SocialIcons>
+							<SocialIcons href="https://www.linkedin.com/in/md-shariful-islam-3132721b8">
+								<FaLinkedinIn className="h-5 w-5" />
+							</SocialIcons>
+							<SocialIcons href="https://www.fiverr.com/shariful102">
+								<TbBrandFiverr className="h-5 w-5" />
+							</SocialIcons>
+							<SocialIcons href="https://twitter.com/shariful_10">
+								<BsTwitter className="h-5 w-5" />
 							</SocialIcons>
 						</div>
 					</div>
