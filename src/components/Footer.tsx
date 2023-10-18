@@ -10,6 +10,7 @@ import {
 import Container from "./Container";
 import Logo from "./Logo";
 import Link from "next/link";
+import SocialIcons from "./SocialIcons";
 
 const Footer = () => {
 	return (
@@ -23,11 +24,9 @@ const Footer = () => {
 							elit. Aliquam, molestias.
 						</p>
 						<div className="">
-							<Link href="https://github.com/shariful10" target="_blank">
-								<span className="bg-slate-100 text-darkText p-1 inline-flex items-center rounded-md text-lg hover:bg-blue-600 hover:text-white cursor-pointer duration-200">
-									<BsGithub className="h-5 w-5" />
-								</span>
-							</Link>
+							<SocialIcons href="https://github.com/shariful10">
+								<BsGithub className="h-5 w-5" />
+							</SocialIcons>
 						</div>
 					</div>
 				</div>
