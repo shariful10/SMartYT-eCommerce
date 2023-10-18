@@ -7,7 +7,6 @@ import { FiSearch, FiLogOut } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
-// import Image from "next/image";
 
 const Header = () => {
 	const { data: session } = useSession();
