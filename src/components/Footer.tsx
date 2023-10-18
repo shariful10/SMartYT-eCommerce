@@ -9,6 +9,7 @@ import payment from "@/images/payment.png";
 import { TbBrandFiverr } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BsGithub, BsTwitter, BsLinkedin, BsFacebook } from "react-icons/bs";
+import Image from 'next/image';
 
 const Footer = () => {
 	return (
@@ -83,27 +84,31 @@ const Footer = () => {
 								Home
 							</li>
 						</Link>
-						<Link href="/">
+						<Link href="/cart">
 							<li className="hover:text-blue-500 cursor-pointer duration-200">
 								Cart
 							</li>
 						</Link>
-						<Link href="/">
+						<Link href="/about">
 							<li className="hover:text-blue-500 cursor-pointer duration-200">
 								About
 							</li>
 						</Link>
-						<Link href="/">
+						<Link href="/newsletter">
 							<li className="hover:text-blue-500 cursor-pointer duration-200">
 								Newsletter
 							</li>
 						</Link>
-						<Link href="/">
+						<Link href="/contact">
 							<li className="hover:text-blue-500 cursor-pointer duration-200">
 								Contact
 							</li>
 						</Link>
 					</ul>
+				</div>
+				<div>
+				<p className="text-lg mb-5">Pay us with your trusted services</p>
+				<Image src={payment} alt="Payment banner image" className="w-full h-10" />
 				</div>
 			</Container>
 		</div>
