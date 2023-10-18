@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "./Container";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,8 @@ interface Pops {
 }
 
 const BannerText = ({ title }: Pops) => {
+	const [btnHover, setBtnHover] = useState(false);
+
 	return (
 		<div className="hidden lg:inline-block absolute top-0 left-0 w-full h-full">
 			<Container className="flex h-full flex-col gap-y-6 justify-center">
@@ -33,8 +35,28 @@ const BannerText = ({ title }: Pops) => {
 					transition={{ duration: 0.7 }}
 					className="flex gap-x-4 mt-2"
 				>
-					<button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white transition-all duration-200 text-sm uppercase">Find Out More</button>
-					<button className="py-3 px-6 rounded-full bg-slate-200 hover:bg-white transition-all duration-200 text-sm uppercase">Shop Now</button>
+					<button
+						onMouseOver={() => setBtnHover(true)}
+						onMouseLeave={() => setBtnHover(false)}
+						className={`py-3 px-6 rounded-full ${
+							btnHover
+								? "bg-white text-black"
+								: "bg-blue-500 text-white"
+						} transition-all duration-300 text-sm uppercase font-medium`}
+					>
+						Find Out More
+					</button>
+					<button
+						onMouseOver={() => setBtnHover(true)}
+						onMouseLeave={() => setBtnHover(false)}
+						className={`py-3 px-6 rounded-full ${
+							btnHover
+								? "bg-blue-500 text-white"
+								: "bg-white text-black"
+						} transition-all duration-300 text-sm uppercase font-medium`}
+					>
+						Shop Now
+					</button>
 				</motion.div>
 			</Container>
 		</div>

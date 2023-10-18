@@ -24,7 +24,7 @@ const ProductsData = ({ item }: ItemProps) => {
 					className="w-full h-full object-cover group-hover:scale-110 transition-all duration-200 rounded-t-lg"
 				/>
 				{item.isNew && (
-					<span className="absolute top-2 right-2 font-semibold text-xs py-1 px-3 rounded-full bg-white duration-200 group-hover:bg-orange-600 transition-all group-hover:text-white">
+					<span className="absolute top-2 right-2 font-semibold text-xs py-1 px-3 rounded-full bg-white duration-200 group-hover:bg-blue-500 transition-all group-hover:text-white">
 						New Arrival
 					</span>
 				)}
@@ -32,7 +32,7 @@ const ProductsData = ({ item }: ItemProps) => {
 			<div className="border border-slate-300 border-t-0 px-2 py-4 flex flex-col gap-y-2 bg-white rounded-b-lg">
 				<p className="font-medium">{item?.title}</p>
 				<div className="flex items-center justify-between">
-					<div className="border border-orange-600 py-1 px-4 rounded-full text-xs">
+					<div className="border border-blue-500 py-1 px-4 rounded-full text-xs">
 						<p className="font-semibold">
 							{calculatePercentage(item?.price, item?.oldPrice)}%
 							Off
@@ -48,7 +48,7 @@ const ProductsData = ({ item }: ItemProps) => {
 					</div>
 				</div>
 				<div className="flex items-center justify-between">
-					<button className="bg-orange-600 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-orange-700 hover:text-white duration-200">Add to Card</button>
+					<button className="bg-blue-500 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-blue-700 hover:text-white duration-200">Add to Card</button>
 					<div className="flex items-center gap-x-1">{starArray}</div>
 				</div>
 			</div>

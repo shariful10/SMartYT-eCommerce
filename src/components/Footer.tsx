@@ -1,14 +1,15 @@
 import React from "react";
 import payment from "@/images/payment.png";
 import {
-	BsYoutube,
 	BsGithub,
+	BsReddit,
+	BsTwitter,
 	BsLinkedin,
 	BsFacebook,
-	BsReddit,
 } from "react-icons/bs";
 import Container from "./Container";
 import Logo from "./Logo";
+import Link from "next/link";
 
 const Footer = () => {
 	return (
@@ -22,9 +23,11 @@ const Footer = () => {
 							elit. Aliquam, molestias.
 						</p>
 						<div className="">
-							<span className="bg-slate-100 text-darkText p-1 inline-flex items-center rounded-md text-lg hover:bg-blue-600 hover:text-white cursor-pointer duration-200">
-								<BsYoutube className="h-5 w-5" />
-							</span>
+							<Link href="https://github.com/shariful10" target="_blank">
+								<span className="bg-slate-100 text-darkText p-1 inline-flex items-center rounded-md text-lg hover:bg-blue-600 hover:text-white cursor-pointer duration-200">
+									<BsGithub className="h-5 w-5" />
+								</span>
+							</Link>
 						</div>
 					</div>
 				</div>
