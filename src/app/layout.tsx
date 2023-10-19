@@ -9,8 +9,10 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Hone | SMartYT",
-	description: "The Shopping Mart",
+	title: {
+		template: "shopping-mart",
+		default: "Shopping Mart - A place for all!",
+	}
 };
 
 export default function RootLayout({

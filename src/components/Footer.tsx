@@ -107,7 +107,7 @@ const Footer = () => {
 					</ul>
 				</div>
 				<div>
-					<p className="text-lg mb-2">
+					<p className="text-lg mb-3">
 						Pay us with your trusted services
 					</p>
 					<Image
