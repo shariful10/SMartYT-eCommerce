@@ -9,13 +9,13 @@ const CartPage = () => {
 	const { productData } = useSelector((state: StateProps) => state?.shopping);
 
 	return (
-    <Container>
-      <h2 className="text-2xl font-semibold mb-2">Cart</h2>
-      <div className="">
-        <CartItem />
-      </div>
-    </Container>
-  );
+		<Container>
+			<h2 className="text-2xl font-semibold mb-2">Cart</h2>
+			<div className="">
+				<CartItem />
+			</div>
+		</Container>
+	);
 };
 
 export default CartPage;
