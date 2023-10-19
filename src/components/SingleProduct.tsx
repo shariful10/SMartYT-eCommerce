@@ -19,7 +19,7 @@ const SingleProduct = ({ product }: any) => {
 		</div>
     <div className="">
       <div className="">
-        <p className="">{product?.title}</p>
+        <p className="text-3xl font-semibold">{product?.title}</p>
         <p className=""><FormattedPrice amount={product?.price} /></p>
       </div>
     </div>
