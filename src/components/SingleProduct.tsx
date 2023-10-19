@@ -3,8 +3,8 @@
 import Image from "next/image";
 import FormattedPrice from "./FormattedPrice";
 import { IoMdCart } from "react-icons/io";
-import { MdFavoriteBorder } from "react-icons/md"
- 
+import { MdFavoriteBorder } from "react-icons/md";
+
 const SingleProduct = ({ product }: any) => {
 	console.log(product);
 
@@ -41,14 +41,16 @@ const SingleProduct = ({ product }: any) => {
 					</span>
 				</div>
 				<div className="flex items-center cursor-pointer group">
-					<button className="bg-darkText text-slate-100 px-6 py-3 text-sm rounded-l-[4px] uppercase flex items-center border-r-[1px] border-r-slate-500">
+					<button className="bg-darkText text-slate-100 px-6 py-3 text-sm rounded-l-[5px] uppercase flex items-center border-r-[1px] border-r-slate-500">
 						Add to Cart
 					</button>
-					<span className="bg-darkText text-xl text-slate-100 w-12 flex items-center justify-center group-hover:bg-blue-600 duration-200 py-3 rounded-r-[4px]">
+					<span className="bg-darkText text-xl text-slate-100 w-12 flex items-center justify-center group-hover:bg-blue-600 duration-200 py-3 rounded-r-[5px]">
 						<IoMdCart />
 					</span>
 				</div>
-				<p><MdFavoriteBorder className="text-xl" /> Add to wishlist</p>
+				<p className="flex items-center gap-x-2 text-sm">
+					<MdFavoriteBorder className="text-xl" /> Add to wishlist
+				</p>
 			</div>
 		</div>
 	);
