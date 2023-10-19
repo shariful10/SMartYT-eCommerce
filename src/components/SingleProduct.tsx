@@ -6,8 +6,6 @@ import { IoMdCart } from "react-icons/io";
 import { MdFavoriteBorder } from "react-icons/md";
 
 const SingleProduct = ({ product }: any) => {
-	console.log(product);
-
 	return (
 		<div className="grid lg:grid-cols-2 gap-5 bg-white p-4 rounded-lg">
 			<div>
