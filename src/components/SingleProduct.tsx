@@ -25,7 +25,7 @@ const SingleProduct = ({ product }: any) => {
 					</p>
 				</div>
 				<p className="text-lightText">{product?.description}</p>
-				<div className="text-sm text-lightText">
+				<div className="text-sm text-lightText flex flex-col">
 					<span>
 						SKU:
 						<span className="text-darkText"> {product?._id}</span>
