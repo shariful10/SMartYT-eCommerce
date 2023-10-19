@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import FormattedPrice from "./FormattedPrice";
 
 const SingleProduct = ({ product }: any) => {
 	console.log(product);
@@ -19,6 +20,7 @@ const SingleProduct = ({ product }: any) => {
     <div className="">
       <div className="">
         <p className="">{product?.title}</p>
+        <p className=""><FormattedPrice amount={product?.price} /></p>
       </div>
     </div>
     </div>
