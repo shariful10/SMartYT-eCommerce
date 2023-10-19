@@ -35,6 +35,9 @@ const SingleProduct = ({ product }: any) => {
 						<span className="text-darkText"> {product?.category}</span>
 					</span>
 				</div>
+				<div className="">
+					<button className="">Add to Cart</button>
+				</div>
 			</div>
 		</div>
 	);
