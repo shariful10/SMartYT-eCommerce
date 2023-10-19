@@ -25,8 +25,8 @@ const SingleProduct = ({ product }: any) => {
 					</p>
 				</div>
 				<p className="text-lightText">{product?.description}</p>
-				<div className="">
-					<span>SKU: <span>{product?._id}</span></span>
+				<div className="text-sm text-lightText">
+					<span>SKU: <span className="text-darkText">{product?._id}</span></span>
 				</div>
 			</div>
 		</div>
