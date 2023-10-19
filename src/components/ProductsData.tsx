@@ -1,13 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { ItemProps } from "../../types";
-import { calculatePercentage } from "@/helpers";
-import FormattedPrice from "./FormattedPrice";
+import { useDispatch } from "react-redux";
 import { IoIosStar } from "react-icons/io";
-import Link from "next/link";
+import FormattedPrice from "./FormattedPrice";
+import { calculatePercentage } from "@/helpers";
+import toast, { Toaster } from "react-hot-toast";
+import { addToCart } from "@/redux/shoppingSlice";
 
 const ProductsData = ({ item }: ItemProps) => {
+	const dispatch = useDispatch();
+
 	const starArray = Array.from({ length: item?.rating }, (_, i) => (
 		<span key={i} className="text-yellow-400">
 			<IoIosStar />
@@ -51,13 +56,24 @@ const ProductsData = ({ item }: ItemProps) => {
 					</div>
 				</div>
 				<div className="flex items-center justify-between">
-					<button className="bg-blue-500 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-blue-700 hover:text-white duration-200">
+					<button
+						onClick={() =>
+							dispatch(addToCart(item)) &&
+							toast.success(
+								`${item?.title.substring(
+									0,
+									15
+								)} added successfully.`
+							)
+						}
+						className="bg-blue-500 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-blue-700 hover:text-white duration-200"
+					>
 						Add to Card
 					</button>
 					<div className="flex items-center gap-x-1">{starArray}</div>
 				</div>
-				L
 			</div>
+			<Toaster />
 		</div>
 	);
 };
