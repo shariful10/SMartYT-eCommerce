@@ -9,7 +9,7 @@ import payment from "@/images/payment.png";
 import { TbBrandFiverr } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa";
 import { BsGithub, BsTwitter, BsLinkedin, BsFacebook } from "react-icons/bs";
-import Image from 'next/image';
+import Image from "next/image";
 
 const Footer = () => {
 	return (
@@ -107,8 +107,14 @@ const Footer = () => {
 					</ul>
 				</div>
 				<div>
-				<p className="text-lg mb-5">Pay us with your trusted services</p>
-				<Image src={payment} alt="Payment banner image" className="w-full h-10" />
+					<p className="text-lg mb-2">
+						Pay us with your trusted services
+					</p>
+					<Image
+						src={payment}
+						alt="Payment banner image"
+						className="w-full h-10"
+					/>
 				</div>
 			</Container>
 		</div>
