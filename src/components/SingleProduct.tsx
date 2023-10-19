@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import FormattedPrice from "./FormattedPrice";
+import { IoMdCart } from "react-icons/io";
 
 const SingleProduct = ({ product }: any) => {
 	console.log(product);
@@ -37,6 +38,7 @@ const SingleProduct = ({ product }: any) => {
 				</div>
 				<div className="">
 					<button className="bg-darkText text-slate-100 px-6 py-3 text-sm rounded-[4px] uppercase flex items-center border-r-[1px] border-r-slate-500">Add to Cart</button>
+					<span><IoMdCart /></span>
 				</div>
 			</div>
 		</div>
