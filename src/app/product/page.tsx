@@ -1,13 +1,30 @@
+import Container from "@/components/Container";
+import { getSingleProduct, getTrendingProducts } from "@/helpers";
+import { Products } from "../../../types";
+import ProductsData from "@/components/ProductsData";
+
 type Props = {
-    searchParams: {[key: string]: string | string[] | undefined},
-}
+	searchParams: { [key: string]: string | string[] | undefined };
+};
 
-const ProductPage = ({ searchParams }: Props) => {
-    console.log(typeof searchParams._id);
+const ProductPage = async ({ searchParams }: Props) => {
+	const _idString = searchParams?._id;
+	const id = Number(_idString);
+	const product = getSingleProduct(id);
+	const data = await getTrendingProducts();
 
-  return (
-    <div>ProductPage</div>
-  )
-}
+	return (
+		<Container>
+			<div className="">
+				<p className="">Tranding Products</p>
+				<div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
+					{data?.map((item: Products) => (
+						<ProductsData key={item._id} item={item} />
+					))}
+				</div>
+			</div>
+		</Container>
+	);
+};
 
-export default ProductPage
+export default ProductPage;
