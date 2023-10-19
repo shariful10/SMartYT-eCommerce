@@ -36,7 +36,7 @@ const SingleProduct = ({ product }: any) => {
 						<span className="text-darkText"> {product?.category}</span>
 					</span>
 				</div>
-				<div className="">
+				<div className="flex items-center cursor-pointer group">
 					<button className="bg-darkText text-slate-100 px-6 py-3 text-sm rounded-[4px] uppercase flex items-center border-r-[1px] border-r-slate-500">Add to Cart</button>
 					<span><IoMdCart /></span>
 				</div>
