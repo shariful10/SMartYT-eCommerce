@@ -17,12 +17,13 @@ const SingleProduct = ({ product }: any) => {
 					className="w-full max-h-[500px] object-cover rounded-lg"
 				/>
 			</div>
-			<div className="">
+			<div className="flex flex-col justify-center gap-y-10">
 				<div className="">
 					<p className="text-3xl font-semibold">{product?.title}</p>
 					<p className="text-xl font-semibold">
 						<FormattedPrice amount={product?.price} />
 					</p>
+					<p className="">{product?.description}</p>
 				</div>
 			</div>
 		</div>
