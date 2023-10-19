@@ -48,7 +48,7 @@ const SingleProduct = ({ product }: any) => {
 						<IoMdCart />
 					</span>
 				</div>
-				<p><MdFavoriteBorder /> Add to wishlist</p>
+				<p><MdFavoriteBorder className="text-xl" /> Add to wishlist</p>
 			</div>
 		</div>
 	);
