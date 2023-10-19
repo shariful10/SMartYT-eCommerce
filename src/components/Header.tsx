@@ -1,5 +1,6 @@
 "use client";
 import Logo from "./Logo";
+import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
 import { Products, StateProps } from "../../types";
@@ -13,8 +14,8 @@ import FormattedPrice from "./FormattedPrice";
 
 const Header = () => {
 	const { data: session } = useSession();
-	const { productData } = useSelector((state: StateProps) => state.shopping);
 	const [totalAmount, setTotalAmount] = useState(0);
+	const { productData } = useSelector((state: StateProps) => state.shopping);
 
 	useEffect(() => {
 		let amt = 0;
@@ -46,6 +47,7 @@ const Header = () => {
 					</div>
 				)}
 				{/* <===<<=== Cart Button ===>>===> */}
+				<Link href="/cart">
 				<div className="bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center gap-x-1 px-3 py-1.5 cursor-pointer border border-black hover:border-blue-500 transition-all duration-200 relative">
 					<IoMdCart className="text-2xl" />
 					<p className="">
@@ -55,6 +57,7 @@ const Header = () => {
 						{productData ? productData?.length : 0}
 					</span>
 				</div>
+				</Link>
 				{/* <===<<=== User Image ===>>===> */}
 				{session && (
 					<Image
