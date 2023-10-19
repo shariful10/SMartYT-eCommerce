@@ -3,7 +3,8 @@
 import Image from "next/image";
 import FormattedPrice from "./FormattedPrice";
 import { IoMdCart } from "react-icons/io";
-
+import { MdFavoriteBorder } from "react-icons/md"
+ 
 const SingleProduct = ({ product }: any) => {
 	console.log(product);
 
@@ -47,6 +48,7 @@ const SingleProduct = ({ product }: any) => {
 						<IoMdCart />
 					</span>
 				</div>
+				<p><MdFavoriteBorder /> Add to wishlist</p>
 			</div>
 		</div>
 	);
