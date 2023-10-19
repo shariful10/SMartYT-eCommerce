@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Products, StateProps } from "../../types";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { decreaseQuantity, increaseQuantity } from "@/redux/shoppingSlice";
+import {
+	decreaseQuantity,
+	deleteProduct,
+	increaseQuantity,
+} from "@/redux/shoppingSlice";
 import FormattedPrice from "./FormattedPrice";
 
 const CartItem = () => {
@@ -29,7 +33,12 @@ const CartItem = () => {
 							className="w-full bg-white p-4 flex flex-col md:flex-row rounded-[4px] items-center justify-between gap-4"
 						>
 							<div className="flex items-center gap-x-3 w-full md:w-1/3">
-								<span className="text-lg hover:text-red-600 cursor-pointer duration-200">
+								<span
+									onClick={() =>
+										dispatch(deleteProduct(item?._id))
+									}
+									className="text-lg hover:text-red-600 cursor-pointer duration-200"
+								>
 									<AiOutlineClose />
 								</span>
 								<Image
