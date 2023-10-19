@@ -32,7 +32,7 @@ const SingleProduct = ({ product }: any) => {
 					</span>
 					<span>
 						Category:
-						<span className=""> {product?.category}</span>
+						<span className="text-darkText"> {product?.category}</span>
 					</span>
 				</div>
 			</div>
