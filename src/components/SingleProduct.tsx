@@ -36,7 +36,7 @@ const SingleProduct = ({ product }: any) => {
 					</span>
 				</div>
 				<div className="">
-					<button className="">Add to Cart</button>
+					<button className="bg-darkText text-slate-100 px-6 py-3 text-sm rounded-[4px] uppercase flex items-center border-r-[1px] border-r-slate-500">Add to Cart</button>
 				</div>
 			</div>
 		</div>
