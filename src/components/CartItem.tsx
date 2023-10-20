@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
-import { Products, StateProps } from "../../types";
-import { AiOutlineClose } from "react-icons/ai";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import {
 	decreaseQuantity,
 	deleteProduct,
 	increaseQuantity,
 } from "@/redux/shoppingSlice";
 import FormattedPrice from "./FormattedPrice";
+import { AiOutlineClose } from "react-icons/ai";
+import toast, { Toaster } from "react-hot-toast";
+import { Products, StateProps } from "../../types";
+import { useDispatch, useSelector } from "react-redux";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const CartItem = () => {
 	const { productData } = useSelector((state: StateProps) => state?.shopping);
@@ -35,7 +36,10 @@ const CartItem = () => {
 							<div className="flex items-center gap-x-3 w-full md:w-1/3">
 								<span
 									onClick={() =>
-										dispatch(deleteProduct(item?._id))
+										dispatch(deleteProduct(item?._id)) &&
+										toast.success(
+											`${item?.title} successfully deleted!`
+										)
 									}
 									className="text-lg hover:text-red-600 cursor-pointer duration-200"
 								>
@@ -89,6 +93,7 @@ const CartItem = () => {
 					</p>
 				</div>
 			)}
+			<Toaster />
 		</div>
 	);
 };
