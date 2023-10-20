@@ -3,26 +3,40 @@ import Logo from "./Logo";
 import Link from "next/link";
 import Image from "next/image";
 import Container from "./Container";
-import { Products, StateProps } from "../../types";
-import { useSelector } from "react-redux";
 import { IoMdCart } from "react-icons/io";
-import { AiOutlineUser } from "react-icons/ai";
-import { FiSearch, FiLogOut } from "react-icons/fi";
-import { useSession, signIn, signOut } from "next-auth/react";
 import { useEffect, useState } from "react";
 import FormattedPrice from "./FormattedPrice";
+import { AiOutlineUser } from "react-icons/ai";
+import { addUser } from "@/redux/shoppingSlice";
+import { Products, StateProps } from "../../types";
+import { FiSearch, FiLogOut } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Header = () => {
+	const dispatch = useDispatch();
 	const { data: session } = useSession();
 	const [totalAmount, setTotalAmount] = useState(0);
 	const { productData } = useSelector((state: StateProps) => state.shopping);
 
 	useEffect(() => {
+		if (session) {
+			dispatch(
+				addUser({
+					name: session?.user?.name,
+					email: session?.user?.email,
+					image: session?.user?.image,
+				})
+			);
+		}
+	}, [dispatch, session]);
+
+	useEffect(() => {
 		let amt = 0;
 		productData.map((item: Products) => {
-			amt += item.price * item.quantity
-			return
-		})
+			amt += item.price * item.quantity;
+			return;
+		});
 		setTotalAmount(amt);
 	}, [productData]);
 
@@ -48,15 +62,17 @@ const Header = () => {
 				)}
 				{/* <===<<=== Cart Button ===>>===> */}
 				<Link href="/cart">
-				<div className="bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center gap-x-1 px-3 py-1.5 cursor-pointer border border-black hover:border-blue-500 transition-all duration-200 relative">
-					<IoMdCart className="text-2xl" />
-					<p className="">
-						<FormattedPrice amount={totalAmount ? totalAmount : 0} />
-					</p>
-					<span className="bg-white text-blue-500 rounded-full text-xs font-semibold absolute -right-2 -top-1 w-5 h-5 flex items-center justify-center shadow-xl shadow-black">
-						{productData ? productData?.length : 0}
-					</span>
-				</div>
+					<div className="bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center gap-x-1 px-3 py-1.5 cursor-pointer border border-black hover:border-blue-500 transition-all duration-200 relative">
+						<IoMdCart className="text-2xl" />
+						<p className="">
+							<FormattedPrice
+								amount={totalAmount ? totalAmount : 0}
+							/>
+						</p>
+						<span className="bg-white text-blue-500 rounded-full text-xs font-semibold absolute -right-2 -top-1 w-5 h-5 flex items-center justify-center shadow-xl shadow-black">
+							{productData ? productData?.length : 0}
+						</span>
+					</div>
 				</Link>
 				{/* <===<<=== User Image ===>>===> */}
 				{session && (
