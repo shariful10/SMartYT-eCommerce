@@ -17,7 +17,7 @@ const CartItem = () => {
 	const dispatch = useDispatch();
 
 	return (
-		<div className="flex flex-col gap-y-2 min-h-[calc(100vh-380px)]">
+		<div className="flex flex-col gap-y-2">
 			<div className="hidden lg:inline-flex items-center justify-between font-semibold bg-white p-2 rounded-[4px]">
 				<p className="w-1/3">Product</p>
 				<p className="w-1/3 flex items-center justify-center">
