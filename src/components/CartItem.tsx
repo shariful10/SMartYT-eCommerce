@@ -102,7 +102,9 @@ const CartItem = () => {
 						Your product cart is currently empty!
 					</p>
 					<Link href={"/"}>
-					<button className="bg-black py-3 px-6 rounded-[5px] text-slate-100 hover:bg-blue-600 hover:text-white duration-200">Return to shop</button>
+						<button className="bg-black py-3 px-6 rounded-[5px] text-slate-100 hover:bg-blue-600 hover:text-white duration-200">
+							Return to shop
+						</button>
 					</Link>
 				</div>
 			)}
