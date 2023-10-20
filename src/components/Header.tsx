@@ -7,10 +7,10 @@ import { IoMdCart } from "react-icons/io";
 import { useEffect, useState } from "react";
 import FormattedPrice from "./FormattedPrice";
 import { AiOutlineUser } from "react-icons/ai";
-import { addUser } from "@/redux/shoppingSlice";
 import { Products, StateProps } from "../../types";
 import { FiSearch, FiLogOut } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
+import { addUser, deleteUser } from "@/redux/shoppingSlice";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 const Header = () => {
@@ -28,6 +28,8 @@ const Header = () => {
 					image: session?.user?.image,
 				})
 			);
+		} else {
+			dispatch(deleteUser())
 		}
 	}, [dispatch, session]);
 
@@ -44,7 +46,7 @@ const Header = () => {
 		<div className="bg-bodyColor h-20 top-0 sticky z-50">
 			<Container className="h-full flex items-center md:gap-x-5 justify-between md:justify-start">
 				<Logo />
-				{/* <===<<=== Search Field ===>>===> */}
+				{/* <==<<=== Search Field ===>>==> */}
 				<div className="w-full bg-white hidden md:flex items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-blue-500 group">
 					<FiSearch className="text-gray-500 group-focus-within:text-darkText transition-all duration-200" />
 					<input
@@ -53,14 +55,14 @@ const Header = () => {
 						className="placeholder:text-sm flex-1 outline-none"
 					/>
 				</div>
-				{/* <===<<=== Login/Register ===>>===> */}
+				{/* <==<<=== Login/Register ===>>==> */}
 				{!session && (
 					<div onClick={() => signIn()} className="headerDiv">
 						<AiOutlineUser className="text-2xl" />
 						<p className="text-sm font-semibold">Login/Register</p>
 					</div>
 				)}
-				{/* <===<<=== Cart Button ===>>===> */}
+				{/* <==<<=== Cart Button ===>>==> */}
 				<Link href="/cart">
 					<div className="bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center gap-x-1 px-3 py-1.5 cursor-pointer border border-black hover:border-blue-500 transition-all duration-200 relative">
 						<IoMdCart className="text-2xl" />
@@ -74,7 +76,7 @@ const Header = () => {
 						</span>
 					</div>
 				</Link>
-				{/* <===<<=== User Image ===>>===> */}
+				{/* <==<<=== User Image ===>>==> */}
 				{session && (
 					<Image
 						src={session?.user?.image as string}
@@ -84,7 +86,7 @@ const Header = () => {
 						className="rounded-full object-cover"
 					/>
 				)}
-				{/* <===<<=== Logout Button ===>>===> */}
+				{/* <==<<=== Logout Button ===>>==> */}
 				{session && (
 					<div
 						onClick={() => signOut()}
