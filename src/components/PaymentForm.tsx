@@ -49,12 +49,25 @@ const PaymentForm = () => {
 					</p>
 				</div>
 			</div>
-			{userInfo ? (
-				<button className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] hover:bg-blue-600 duration-200">Proceed to checkout</button>
+			{userInfo && productData?.length !== 0 ? (
+				<button className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] hover:bg-blue-600 duration-200">
+					Proceed to checkout
+				</button>
 			) : (
 				<div className="">
-					<button className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] cursor-not-allowed">Proceed to checkout</button>
-                    <p className="text-base mt-1 text-red-500 font-semibold animate-bounce">Please login to continue</p>
+					<button className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] cursor-not-allowed">
+						Proceed to checkout
+					</button>
+					{userInfo && productData?.length === 0 && (
+						<p className="text-base mt-1 text-red-500 font-semibold animate-bounce">
+							Your cart is empty!
+						</p>
+					)}
+					{!userInfo && (
+						<p className="text-base mt-1 text-red-500 font-semibold animate-bounce">
+							Please login to continue
+						</p>
+					)}
 				</div>
 			)}
 		</div>

@@ -35,7 +35,7 @@ const CartPage = () => {
 					</div>
 				)}
 				{/* <===<<=== Paument Cart ===>>===> */}
-				<PaymentForm />
+				{productData?.length !== 0 && <PaymentForm />}
 			</div>
 			<Toaster />
 		</Container>
