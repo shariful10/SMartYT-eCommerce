@@ -5,6 +5,7 @@ import {
 	deleteProduct,
 	increaseQuantity,
 } from "@/redux/shoppingSlice";
+import Link from "next/link";
 import FormattedPrice from "./FormattedPrice";
 import { AiOutlineClose } from "react-icons/ai";
 import toast, { Toaster } from "react-hot-toast";
@@ -96,10 +97,13 @@ const CartItem = () => {
 					<Toaster />
 				</div>
 			) : (
-				<div className="flex flex-col justify-center items-center">
+				<div className="flex flex-col justify-center items-center gap-y-6 bg-white h-96 px-4 rounded-[5px]">
 					<p className="text-3xl font-semibold mt-5">
 						Your product cart is currently empty!
 					</p>
+					<Link href={"/"}>
+					<button className="bg-black py-3 px-6 rounded-[5px] text-slate-100 hover:bg-blue-600 hover:text-white duration-200">Return to shop</button>
+					</Link>
 				</div>
 			)}
 		</>
