@@ -20,7 +20,7 @@ const CartPage = () => {
 			<h2 className="text-2xl font-semibold mb-2">Cart</h2>
 			<div className="flex flex-col gap-5">
 				<CartItem />
-				<div className="flex items-center justify-end">
+				{productData.length > 0 && <div className="flex items-center justify-end">
 					<button
 						onClick={() => {
 							dispatch(resetCart())
@@ -30,7 +30,7 @@ const CartPage = () => {
 					>
 						Reset Cart
 					</button>
-				</div>
+				</div>}
 			</div>
 			<Toaster />
 		</Container>
