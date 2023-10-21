@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Products, StateProps } from "../../types";
 import Image from "next/image";
+import FormattedPrice from "./FormattedPrice";
 
 const OrderDetails = () => {
 	const [totalAmount, setTotalAmount] = useState(0);
@@ -31,8 +32,11 @@ const OrderDetails = () => {
 				{
 					// @ts-ignore
 					order?.map((item: Products) => (
-						<div key={item._id} className="py-2 border-b border-b-gray-300 grid-cols-7 items-center">
-							<div className="col-span-4 flex items-start gap-2 text-sm">
+						<div
+							key={item._id}
+							className="py-2 border-b border-b-gray-300 grid grid-cols-7 items-center"
+						>
+							<div className="flex items-start gap-2 text-sm col-span-4">
 								<Image
 									src={item?.image}
 									width={500}
@@ -41,10 +45,14 @@ const OrderDetails = () => {
 									className="w-12 h-12 object-cover rounded-md"
 								/>
 								<div className="">
-									<h3 className="text-base font-semibold mb-1">{item?.title}</h3>
+									<h3 className="text-base font-semibold mb-0.5">
+										{item?.title}
+									</h3>
 									<p>{item?.description}</p>
 								</div>
 							</div>
+							<p className="flex items-center justify-center">{item?.quantity}</p>
+							
 						</div>
 					))
 				}
