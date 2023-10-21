@@ -47,9 +47,8 @@ const PaymentForm = () => {
 			await dispatch(saveOrder({ order: productData, id: data.id }));
 			stripe?.redirectToCheckout({ sessionId: data.id });
 			dispatch(resetCart())
-			toast.success("Payment successful 🥳")
 		} else {
-			throw new Error("Failed to create payment!")
+			throw new Error("Failed to create payment! 🤢")
 		}
 	};
 

@@ -57,6 +57,7 @@ const CartItem = () => {
 										height={500}
 										alt="Product Image"
 										className="w-20 h-20 object-cover rounded-[4px]"
+										loading="lazy"
 									/>
 								</div>
 								{/* <===<<=== Quantity ===>>===> */}
