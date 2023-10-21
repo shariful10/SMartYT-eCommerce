@@ -1,11 +1,13 @@
 "use client";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { Products, StateProps } from "../../types";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import FormattedPrice from "./FormattedPrice";
+import { Products, StateProps } from "../../types";
+import { useDispatch, useSelector } from "react-redux";
+import { resetOrder } from "@/redux/shoppingSlice";
 
 const OrderDetails = () => {
+	const dispath = useDispatch();
 	const [totalAmount, setTotalAmount] = useState(0);
 	const { orderData } = useSelector((state: StateProps) => state?.shopping);
 	const order = orderData.order;
@@ -21,7 +23,9 @@ const OrderDetails = () => {
 	}, [order]);
 
 	return (
-		<div>
+		<>
+		{
+			order > 0 ? <div>
 			<div className="grid grid-cols-7 text-sm font-medium py-2 border-b border-b-gray-300">
 				<p className="col-span-4">Items</p>
 				<p className="flex items-center justify-center">Quantity</p>
@@ -75,10 +79,12 @@ const OrderDetails = () => {
 					<FormattedPrice amount={totalAmount} />
 				</span>
 			</p>
-			<button className="mt-5 border border-gray-50 py-1 px-4 font-medium rounded-md hover:border-blue-600 duration-300">
+			<button onClick={() => dispath(resetOrder())} className="mt-5 border border-gray-50 py-1 px-4 font-medium rounded-md hover:border-blue-600 duration-300">
 				Reset Order
 			</button>
-		</div>
+		</div> : ""
+		}
+		</>
 	);
 };
 
