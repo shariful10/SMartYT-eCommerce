@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Products, StateProps } from "../../types";
+import Image from "next/image";
 
 const OrderDetails = () => {
 	const [totalAmount, setTotalAmount] = useState(0);
@@ -15,17 +16,37 @@ const OrderDetails = () => {
 			amt += item.price * item.quantity;
 			return;
 		});
-		setTotalAmount(amt)
+		setTotalAmount(amt);
 	}, [order]);
 
-	return <div>
-		<div className="">
-			<p>Items</p>
-			<p>Quantity</p>
-			<p>Unit Price</p>
-			<p>Amount</p>
+	return (
+		<div>
+			<div className="grid grid-cols-7 text-sm font-medium py-2 border-b border-b-gray-300">
+				<p className="col-span-4">Items</p>
+				<p className="flex items-center justify-center">Quantity</p>
+				<p className="flex items-center justify-center">Unit Price</p>
+				<p className="flex items-center justify-center">Amount</p>
+			</div>
+			<div className="py-2 flex flex-col justify-center gap-2">
+				{
+					// @ts-ignore
+					order?.map((item: Products) => (
+						<div key={item._id} className="py-2 border-b border-b-gray-300 grid-cols-7 items-center">
+							<div className="">
+								<Image
+									src={item?.image}
+									width={500}
+									height={500}
+									alt="Product image"
+									className="w-12 h-12 object-cover rounded-md"
+								/>
+							</div>
+						</div>
+					))
+				}
+			</div>
 		</div>
-	</div>;
+	);
 };
 
 export default OrderDetails;
