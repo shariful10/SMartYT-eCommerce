@@ -10,23 +10,23 @@ const OrderDetails = () => {
 	const dispath = useDispatch();
 	const [totalAmount, setTotalAmount] = useState(0);
 	const { orderData } = useSelector((state: StateProps) => state?.shopping);
-	const order = orderData.order;
+	const order2 = orderData.order;
 
 	useEffect(() => {
 		let amt = 0;
 		// @ts-ignore
-		order.map((item: Products) => {
+		orderData?.order?.map((item: Products) => {
 			amt += item.price * item.quantity;
 			return;
 		});
 		setTotalAmount(amt);
-	}, [order]);
+	}, [orderData?.order]);
 
 	return (
 		<>
 			{
 				// @ts-ignore
-				order?.length > 0 ? (
+				orderData?.order?.length > 0 ? (
 					<div>
 						<div className="grid grid-cols-7 text-sm font-medium py-2 border-b border-b-gray-300">
 							<p className="col-span-4">Items</p>
@@ -43,7 +43,7 @@ const OrderDetails = () => {
 						<div className="py-2 flex flex-col justify-center gap-2 overflow-x-auto">
 							{
 								// @ts-ignore
-								order?.map((item: Products) => (
+								orderData?.order?.map((item: Products) => (
 									<div
 										key={item._id}
 										className="py-2 border-b border-b-gray-300 grid grid-cols-7 items-center"
@@ -99,8 +99,8 @@ const OrderDetails = () => {
 						</button>
 					</div>
 				) : (
-					<div className="">
-						<p>Nothing to show 🤷‍♂️</p>
+					<div className="py-10 bg-white text-black text-2xl text-center rounded-md font-medium">
+						<p>Nothing to Show 🤷‍♂️</p>
 					</div>
 				)
 			}
