@@ -1,10 +1,13 @@
 "use client";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Products, StateProps } from "../../types";
+import { useSession } from 'next-auth/react';
 import FormattedPrice from "./FormattedPrice";
+import { loadStripe } from "@stripe/stripe-js";
+import { Products, StateProps } from "../../types";
 
 const PaymentForm = () => {
+	const { data: session } = useSession();
 	const { productData, userInfo } = useSelector(
 		(state: StateProps) => state?.shopping
 	);
@@ -19,6 +22,27 @@ const PaymentForm = () => {
 		});
 		setTotalAmount(amt);
 	}, [productData]);
+
+	// <===<<=== Stripe Payment ===>>===>
+	const stripePromise = loadStripe(
+		process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+	);
+
+	const handleCheckout = async () => {
+		const res = await fetch("http://localhost:3000/api/checkout", {
+			method: "POST",
+			headers: {"Content-Type": "application/json"},
+			body: JSON.stringify({
+				items: productData,
+				email: session?.user?.email,
+			})
+		})
+		const data = await res.json()
+
+		if(res.ok) {
+			console.log(data);
+		}
+	};
 
 	return (
 		<div className="w-full bg-white p-4 rounded-[5px]">
@@ -50,11 +74,14 @@ const PaymentForm = () => {
 				</div>
 			</div>
 			{userInfo && productData?.length !== 0 ? (
-				<button className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] hover:bg-blue-600 duration-200">
+				<button
+					onClick={handleCheckout}
+					className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] hover:bg-blue-600 duration-200"
+				>
 					Proceed to checkout
 				</button>
 			) : (
-				<div className="">
+				<div>
 					<button className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] cursor-not-allowed">
 						Proceed to checkout
 					</button>
