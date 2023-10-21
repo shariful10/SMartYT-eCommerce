@@ -75,6 +75,7 @@ const OrderDetails = () => {
 					<FormattedPrice amount={totalAmount} />
 				</span>
 			</p>
+			<button>Reset Order</button>
 		</div>
 	);
 };
