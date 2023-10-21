@@ -28,7 +28,7 @@ const OrderDetails = () => {
 				<p className="flex items-center justify-center">Unit Price</p>
 				<p className="flex items-center justify-center">Amount</p>
 			</div>
-			<div className="py-2 flex flex-col justify-center gap-2">
+			<div className="py-2 flex flex-col justify-center gap-2 overflow-x-auto">
 				{
 					// @ts-ignore
 					order?.map((item: Products) => (
@@ -36,13 +36,13 @@ const OrderDetails = () => {
 							key={item._id}
 							className="py-2 border-b border-b-gray-300 grid grid-cols-7 items-center"
 						>
-							<div className="flex items-start gap-2 text-sm col-span-4">
+							<div className="flex items-start gap-4 text-sm col-span-4">
 								<Image
 									src={item?.image}
 									width={500}
 									height={500}
 									alt="Product image"
-									className="w-12 h-12 object-cover rounded-md"
+									className="w-28 h-16 object-cover rounded-md"
 								/>
 								<div className="">
 									<h3 className="text-base font-semibold mb-0.5">
@@ -51,17 +51,30 @@ const OrderDetails = () => {
 									<p>{item?.description}</p>
 								</div>
 							</div>
-							<p className="flex items-center justify-center">{item?.quantity}</p>
+							<p className="flex items-center justify-center">
+								{item?.quantity}
+							</p>
 							<p className="flex items-center justify-center">
 								<FormattedPrice amount={item?.price} />
 							</p>
 							<p className="flex items-center justify-center">
-								<FormattedPrice amount={item?.price * item?.quantity} />
+								<FormattedPrice
+									amount={item?.price * item?.quantity}
+								/>
 							</p>
 						</div>
 					))
 				}
 			</div>
+			<div className="text-lg font-medium py-2 border-b border-b-gray-300 mt-5">
+				<p>Payment Details</p>
+			</div>
+			<p className="flex items-center gap-x-4">
+				Total Paid:
+				<span className="text-lg font-semibold text-blue-600">
+					<FormattedPrice amount={totalAmount} />
+				</span>
+			</p>
 		</div>
 	);
 };
