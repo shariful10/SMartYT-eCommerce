@@ -32,7 +32,7 @@ const OrderDetails = () => {
 					// @ts-ignore
 					order?.map((item: Products) => (
 						<div key={item._id} className="py-2 border-b border-b-gray-300 grid-cols-7 items-center">
-							<div className="">
+							<div className="col-span-4 flex items-start gap-2 text-sm">
 								<Image
 									src={item?.image}
 									width={500}
@@ -40,6 +40,9 @@ const OrderDetails = () => {
 									alt="Product image"
 									className="w-12 h-12 object-cover rounded-md"
 								/>
+								<div className="">
+									<h3 className="">{item?.title}</h3>
+								</div>
 							</div>
 						</div>
 					))
