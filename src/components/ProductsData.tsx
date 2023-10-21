@@ -28,10 +28,10 @@ const ProductsData = ({ item }: ItemProps) => {
 						width={500}
 						height={500}
 						alt="Product Image"
-						className="w-full h-full object-cover group-hover:scale-110 transition-all duration-200 rounded-t-lg"
+						className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300 rounded-t-lg"
 					/>
 					{item.isNew && (
-						<span className="absolute top-2 right-2 font-semibold text-xs py-1 px-3 rounded-full bg-white duration-200 group-hover:bg-blue-500 transition-all group-hover:text-white">
+						<span className="absolute top-2 right-2 font-semibold text-xs py-1 px-3 rounded-full bg-white duration-300 group-hover:bg-blue-500 transition-all group-hover:text-white">
 							New Arrival
 						</span>
 					)}
@@ -66,7 +66,7 @@ const ProductsData = ({ item }: ItemProps) => {
 								)} added successfully.`
 							)
 						}
-						className="bg-blue-500 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-blue-700 hover:text-white duration-200"
+						className="bg-blue-500 px-4 py-2 text-sm tracking-wide rounded-full text-slate-100 hover:bg-blue-700 hover:text-white duration-300"
 					>
 						Add to Card
 					</button>

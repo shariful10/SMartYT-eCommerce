@@ -50,7 +50,7 @@ const Header = () => {
 				<Logo />
 				{/* <==<<=== Search Field ===>>==> */}
 				<div className="w-full bg-white hidden md:flex items-center gap-x-1 border-[1px] border-lightText/50 rounded-full px-4 py-1.5 focus-within:border-blue-500 group">
-					<FiSearch className="text-gray-500 group-focus-within:text-darkText transition-all duration-200" />
+					<FiSearch className="text-gray-500 group-focus-within:text-darkText transition-all duration-300" />
 					<input
 						type="text"
 						placeholder="Search for products"
@@ -66,7 +66,7 @@ const Header = () => {
 				)}
 				{/* <==<<=== Cart Button ===>>==> */}
 				<Link href="/cart">
-					<div className="bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center gap-x-1 px-3 py-1.5 cursor-pointer border border-black hover:border-blue-500 transition-all duration-200 relative">
+					<div className="bg-black hover:bg-slate-950 rounded-full text-slate-100 hover:text-white flex items-center justify-center gap-x-1 px-3 py-1.5 cursor-pointer border border-black hover:border-blue-500 transition-all duration-300 relative">
 						<IoMdCart className="text-2xl" />
 						<p className="">
 							<FormattedPrice

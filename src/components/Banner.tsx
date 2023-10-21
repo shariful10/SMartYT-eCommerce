@@ -13,7 +13,7 @@ const Banner = () => {
 		const { onClick } = props;
 		return (
 			<div
-				className="p-3 bg-white hover:text-white hover:bg-blue-500  cursor-pointer transition-all duration-200 rounded-full text-2xl flex items-center z-20 absolute left-5 top-[35%] md:top-[40%] lg:top-1/2"
+				className="p-3 bg-white hover:text-white hover:bg-blue-500  cursor-pointer transition-all duration-300 rounded-full text-2xl flex items-center z-20 absolute left-5 top-[35%] md:top-[40%] lg:top-1/2"
 				onClick={onClick}
 			>
 				<FaAngleLeft />
@@ -25,7 +25,7 @@ const Banner = () => {
 		const { onClick } = props;
 		return (
 			<div
-				className="p-3 bg-white hover:text-white hover:bg-blue-500 cursor-pointer transition-all duration-200 rounded-full text-2xl flex items-center z-20 absolute right-5 top-[35%] md:top-[40%] lg:top-1/2"
+				className="p-3 bg-white hover:text-white hover:bg-blue-500 cursor-pointer transition-all duration-300 rounded-full text-2xl flex items-center z-20 absolute right-5 top-[35%] md:top-[40%] lg:top-1/2"
 				onClick={onClick}
 			>
 				<FaAngleRight />

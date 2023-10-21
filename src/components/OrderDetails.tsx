@@ -69,13 +69,15 @@ const OrderDetails = () => {
 			<div className="text-lg font-medium py-2 border-b border-b-gray-300 mt-5">
 				<p>Payment Details</p>
 			</div>
-			<p className="flex items-center gap-x-4">
+			<p className="flex items-center gap-x-4 py-2">
 				Total Paid:
 				<span className="text-lg font-semibold text-blue-600">
 					<FormattedPrice amount={totalAmount} />
 				</span>
 			</p>
-			<button className="mt-5 border border-gray-50 py-1 px-4 font-medium rounded-md hover:border-blue-600 duration-200">Reset Order</button>
+			<button className="mt-5 border border-gray-50 py-1 px-4 font-medium rounded-md hover:border-blue-600 duration-300">
+				Reset Order
+			</button>
 		</div>
 	);
 };

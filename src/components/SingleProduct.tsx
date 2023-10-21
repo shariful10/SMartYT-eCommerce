@@ -58,7 +58,7 @@ const SingleProduct = ({ product }: any) => {
 					<button className="bg-darkText text-slate-100 px-6 py-3 text-sm rounded-l-[5px] uppercase flex items-center border-r-[1px] border-r-slate-500">
 						Add to Cart
 					</button>
-					<span className="bg-darkText text-xl text-slate-100 w-12 flex items-center justify-center group-hover:bg-blue-600 duration-200 py-3 rounded-r-[5px]">
+					<span className="bg-darkText text-xl text-slate-100 w-12 flex items-center justify-center group-hover:bg-blue-600 duration-300 py-3 rounded-r-[5px]">
 						<IoMdCart />
 					</span>
 				</div>

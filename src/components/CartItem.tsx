@@ -47,7 +47,7 @@ const CartItem = () => {
 												`${item?.title} successfully deleted!`
 											)
 										}
-										className="text-lg hover:text-red-600 cursor-pointer duration-200"
+										className="text-lg hover:text-red-600 cursor-pointer duration-300"
 									>
 										<AiOutlineClose />
 									</span>
@@ -103,7 +103,7 @@ const CartItem = () => {
 						Your product cart is currently empty!
 					</p>
 					<Link href={"/"}>
-						<button className="bg-black py-3 px-6 rounded-[5px] text-slate-100 hover:bg-blue-600 hover:text-white duration-200">
+						<button className="bg-black py-3 px-6 rounded-[5px] text-slate-100 hover:bg-blue-600 hover:text-white duration-300">
 							Return to shop
 						</button>
 					</Link>

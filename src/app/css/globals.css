@@ -4,6 +4,6 @@
 
 @layer components {
 	.headerDiv {
-		@apply bg-bgLight text-gray-500 flex items-center justify-center py-1.5 px-2.5 rounded-full hover:bg-white border border-gray-200 hover:border-blue-500 transition-all duration-200 cursor-pointer;
+		@apply bg-bgLight text-gray-500 flex items-center justify-center py-1.5 px-2.5 rounded-full hover:bg-white border border-gray-200 hover:border-blue-500 transition-all duration-300 cursor-pointer;
 	}
 }

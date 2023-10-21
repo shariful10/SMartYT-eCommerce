@@ -14,12 +14,12 @@ const Success = () => {
 				</p>
 				<div className="flex items-center gap-x-5">
 					<Link href={"order"}>
-						<button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-blue-600 duration-200">
+						<button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-blue-600 duration-300">
 							View Orders
 						</button>
 					</Link>
 					<Link href={"/"}>
-						<button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-blue-600 duration-200">
+						<button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-blue-600 duration-300">
 							Continue Shopping
 						</button>
 					</Link>

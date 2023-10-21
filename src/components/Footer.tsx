@@ -43,7 +43,7 @@ const Footer = () => {
 					<p className="text-lg">Latest Posts</p>
 					<ul className="text-sm font-light mt-2 flex flex-col gap-y-2">
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-300">
 								Where Music Is Headed Next
 							</span>
 							<span className="text-blue-600">
@@ -51,7 +51,7 @@ const Footer = () => {
 							</span>
 						</li>
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-300">
 								Sports Brand New Advertising Campaign
 							</span>
 							<span className="text-blue-600">
@@ -59,7 +59,7 @@ const Footer = () => {
 							</span>
 						</li>
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-300">
 								Snippets From The Tech Mobile Conference
 							</span>
 							<span className="text-blue-600">
@@ -67,7 +67,7 @@ const Footer = () => {
 							</span>
 						</li>
 						<li className="flex flex-col">
-							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-200">
+							<span className="text-slate-100 hover:text-blue-500 cursor-pointer duration-300">
 								New Music Video Will Blow Your Minds
 							</span>
 							<span className="text-blue-600">
@@ -80,27 +80,27 @@ const Footer = () => {
 					<p className="text-lg">Quick Links</p>
 					<ul className="text-base font-medium mt-2 flex flex-col gap-y-2">
 						<Link href="/">
-							<li className="hover:text-blue-500 cursor-pointer duration-200">
+							<li className="hover:text-blue-500 cursor-pointer duration-300">
 								Home
 							</li>
 						</Link>
 						<Link href="/cart">
-							<li className="hover:text-blue-500 cursor-pointer duration-200">
+							<li className="hover:text-blue-500 cursor-pointer duration-300">
 								Cart
 							</li>
 						</Link>
 						<Link href="/about">
-							<li className="hover:text-blue-500 cursor-pointer duration-200">
+							<li className="hover:text-blue-500 cursor-pointer duration-300">
 								About
 							</li>
 						</Link>
 						<Link href="/newsletter">
-							<li className="hover:text-blue-500 cursor-pointer duration-200">
+							<li className="hover:text-blue-500 cursor-pointer duration-300">
 								Newsletter
 							</li>
 						</Link>
 						<Link href="/contact">
-							<li className="hover:text-blue-500 cursor-pointer duration-200">
+							<li className="hover:text-blue-500 cursor-pointer duration-300">
 								Contact
 							</li>
 						</Link>

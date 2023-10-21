@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSession } from 'next-auth/react';
+import { useSession } from "next-auth/react";
 import FormattedPrice from "./FormattedPrice";
 import { loadStripe } from "@stripe/stripe-js";
 import toast, { Toaster } from "react-hot-toast";
@@ -35,20 +35,20 @@ const PaymentForm = () => {
 		const stripe = await stripePromise;
 		const res = await fetch("http://localhost:3000/api/checkout", {
 			method: "POST",
-			headers: {"Content-Type": "application/json"},
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				items: productData,
 				email: session?.user?.email,
-			})
-		})
-		const data = await res.json()
+			}),
+		});
+		const data = await res.json();
 
-		if(res.ok) {
+		if (res.ok) {
 			await dispatch(saveOrder({ order: productData, id: data.id }));
 			stripe?.redirectToCheckout({ sessionId: data.id });
-			dispatch(resetCart())
+			dispatch(resetCart());
 		} else {
-			throw new Error("Failed to create payment! 🤢")
+			throw new Error("Failed to create payment! 🤢");
 		}
 	};
 
@@ -84,7 +84,7 @@ const PaymentForm = () => {
 			{userInfo && productData?.length !== 0 ? (
 				<button
 					onClick={handleCheckout}
-					className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] hover:bg-blue-600 duration-200"
+					className="bg-black text-slate-100 mt-4 py-3 px-6 rounded-[5px] hover:bg-blue-600 duration-300"
 				>
 					Proceed to checkout
 				</button>
