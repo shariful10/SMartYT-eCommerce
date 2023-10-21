@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react';
 import FormattedPrice from "./FormattedPrice";
 import { loadStripe } from "@stripe/stripe-js";
+import toast, { Toaster } from "react-hot-toast";
 import { Products, StateProps } from "../../types";
 import { useDispatch, useSelector } from "react-redux";
+import { resetCart, saveOrder } from "@/redux/shoppingSlice";
 
 const PaymentForm = () => {
 	const dispatch = useDispatch();
@@ -42,7 +44,12 @@ const PaymentForm = () => {
 		const data = await res.json()
 
 		if(res.ok) {
-			console.log(data);
+			await dispatch(saveOrder({ order: productData, id: data.id }));
+			stripe?.redirectToCheckout({ sessionId: data.id });
+			dispatch(resetCart())
+			toast.success("Payment successful 🥳")
+		} else {
+			throw new Error("Failed to create payment!")
 		}
 	};
 
@@ -94,6 +101,7 @@ const PaymentForm = () => {
 					)}
 				</div>
 			)}
+			<Toaster />
 		</div>
 	);
 };
