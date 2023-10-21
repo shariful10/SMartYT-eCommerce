@@ -9,8 +9,33 @@ import {
 	REGISTER,
 } from "redux-persist";
 import shoppingReducer from "./shoppingSlice";
-import storage from "redux-persist/lib/storage";
 import { configureStore } from "@reduxjs/toolkit";
+import { WebStorage } from "redux-persist/es/types";
+import createWebStorage from "redux-persist/es/storage/createWebStorage";
+
+export const createPersistStorage = (): WebStorage => {
+	const isServer = typeof window === "undefined";
+	// <===<<=== Returns noop (dummy) storage
+	if (isServer) {
+		return {
+			getItem() {
+				return Promise.resolve(null);
+			},
+			setItem() {
+				return Promise.resolve();
+			},
+			removeItem() {
+				return Promise.resolve();
+			},
+		};
+	}
+	return createWebStorage("local");
+};
+
+const storage =
+	typeof window !== "undefined"
+		? createWebStorage("local")
+		: createPersistStorage();
 
 const persistConfig = {
 	key: "root",
