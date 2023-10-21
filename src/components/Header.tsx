@@ -5,6 +5,7 @@ import Image from "next/image";
 import Container from "./Container";
 import { IoMdCart } from "react-icons/io";
 import { useEffect, useState } from "react";
+import { BsBookmarks } from "react-icons/bs";
 import FormattedPrice from "./FormattedPrice";
 import { AiOutlineUser } from "react-icons/ai";
 import { Products, StateProps } from "../../types";
@@ -88,6 +89,16 @@ const Header = () => {
 						className="rounded-full object-cover"
 					/>
 				)}
+				{/* <==<<=== Order Button ===>>==> */}
+				{
+					// @ts-ignore
+					orderData?.order?.length > 0 && session && (
+						<Link href={"/orders"}>
+							<BsBookmarks className="text-2xl" />
+							<p className="text-sm font-semibold">Orders</p>
+						</Link>
+					)
+				}
 				{/* <==<<=== Logout Button ===>>==> */}
 				{session && (
 					<div
