@@ -5,6 +5,7 @@ import FormattedPrice from "./FormattedPrice";
 import { Products, StateProps } from "../../types";
 import { useDispatch, useSelector } from "react-redux";
 import { resetOrder } from "@/redux/shoppingSlice";
+import Link from 'next/link';
 
 const OrderDetails = () => {
 	const dispath = useDispatch();
@@ -101,6 +102,11 @@ const OrderDetails = () => {
 				) : (
 					<div className="py-10 bg-white text-black text-2xl text-center rounded-md font-medium">
 						<p>Nothing to Show 🤷‍♂️</p>
+						<Link href={"/"}>
+						<button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-blue-600 duration-300">
+							Continue Shopping
+						</button>
+					</Link>
 					</div>
 				)
 			}
