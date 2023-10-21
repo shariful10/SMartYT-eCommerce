@@ -41,7 +41,8 @@ const OrderDetails = () => {
 									className="w-12 h-12 object-cover rounded-md"
 								/>
 								<div className="">
-									<h3 className="">{item?.title}</h3>
+									<h3 className="text-base font-semibold mb-1">{item?.title}</h3>
+									<p>{item?.description}</p>
 								</div>
 							</div>
 						</div>
