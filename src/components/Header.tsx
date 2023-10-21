@@ -17,7 +17,9 @@ const Header = () => {
 	const dispatch = useDispatch();
 	const { data: session } = useSession();
 	const [totalAmount, setTotalAmount] = useState(0);
-	const { productData } = useSelector((state: StateProps) => state.shopping);
+	const { productData, orderData } = useSelector(
+		(state: StateProps) => state.shopping
+	);
 
 	useEffect(() => {
 		if (session) {
@@ -29,7 +31,7 @@ const Header = () => {
 				})
 			);
 		} else {
-			dispatch(deleteUser())
+			dispatch(deleteUser());
 		}
 	}, [dispatch, session]);
 
