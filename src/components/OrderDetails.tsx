@@ -53,6 +53,9 @@ const OrderDetails = () => {
 							</div>
 							<p className="flex items-center justify-center">{item?.quantity}</p>
 							<p className="flex items-center justify-center">
+								<FormattedPrice amount={item?.price} />
+							</p>
+							<p className="flex items-center justify-center">
 								<FormattedPrice amount={item?.price * item?.quantity} />
 							</p>
 						</div>
