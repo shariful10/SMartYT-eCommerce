@@ -75,7 +75,7 @@ const OrderDetails = () => {
 					<FormattedPrice amount={totalAmount} />
 				</span>
 			</p>
-			<button>Reset Order</button>
+			<button className="mt-5 border border-gray-50 py-1 px-4 font-medium rounded-md hover:border-blue-600 duration-200">Reset Order</button>
 		</div>
 	);
 };
