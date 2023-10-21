@@ -1,6 +1,5 @@
-import Container from "@/components/Container";
 import Link from "next/link";
-import React from "react";
+import Container from "@/components/Container";
 
 const Success = () => {
 	return (

@@ -1,5 +1,4 @@
 "use client";
-import { Metadata } from "next";
 import { StateProps } from "../../../types";
 import CartItem from "@/components/CartItem";
 import Container from "@/components/Container";
