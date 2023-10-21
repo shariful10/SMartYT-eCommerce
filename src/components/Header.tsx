@@ -93,7 +93,10 @@ const Header = () => {
 				{
 					// @ts-ignore
 					orderData?.order?.length > 0 && session && (
-						<Link href={"/orders"}>
+						<Link
+							href={"/order"}
+							className="headerDiv px-2 gap-x-1 cursor-pointer"
+						>
 							<BsBookmarks className="text-2xl" />
 							<p className="text-sm font-semibold">Orders</p>
 						</Link>
