@@ -20,6 +20,7 @@ export interface StateProps {
         productData: [],
         userInfo: {},
         orderData: {
+			order: unknown
             orderData: {
                 order: Products[]
             }

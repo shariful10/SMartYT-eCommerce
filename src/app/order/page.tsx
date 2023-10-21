@@ -1,9 +1,14 @@
-import React from 'react'
+import Container from "@/components/Container";
+import OrderDetails from "@/components/OrderDetails";
 
 const Order = () => {
-  return (
-    <div>Order</div>
-  )
-}
+	return (
+		<div>
+			<Container>
+				<OrderDetails />
+			</Container>
+		</div>
+	);
+};
 
-export default Order
+export default Order;
