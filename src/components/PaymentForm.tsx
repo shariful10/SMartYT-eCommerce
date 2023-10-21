@@ -1,12 +1,13 @@
 "use client";
-import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react';
 import FormattedPrice from "./FormattedPrice";
 import { loadStripe } from "@stripe/stripe-js";
 import { Products, StateProps } from "../../types";
+import { useDispatch, useSelector } from "react-redux";
 
 const PaymentForm = () => {
+	const dispatch = useDispatch();
 	const { data: session } = useSession();
 	const { productData, userInfo } = useSelector(
 		(state: StateProps) => state?.shopping
@@ -29,6 +30,7 @@ const PaymentForm = () => {
 	);
 
 	const handleCheckout = async () => {
+		const stripe = await stripePromise;
 		const res = await fetch("http://localhost:3000/api/checkout", {
 			method: "POST",
 			headers: {"Content-Type": "application/json"},
