@@ -33,7 +33,7 @@ const PaymentForm = () => {
 
 	const handleCheckout = async () => {
 		const stripe = await stripePromise;
-		const res = await fetch("http://localhost:3000/api/checkout", {
+		const res = await fetch("https://smart-shopping-two.vercel.app/api/checkout", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({

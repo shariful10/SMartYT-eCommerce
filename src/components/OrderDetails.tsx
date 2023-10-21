@@ -11,7 +11,6 @@ const OrderDetails = () => {
 	const dispath = useDispatch();
 	const [totalAmount, setTotalAmount] = useState(0);
 	const { orderData } = useSelector((state: StateProps) => state?.shopping);
-	const order2 = orderData.order;
 
 	useEffect(() => {
 		let amt = 0;

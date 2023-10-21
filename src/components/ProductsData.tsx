@@ -8,7 +8,6 @@ import FormattedPrice from "./FormattedPrice";
 import { calculatePercentage } from "@/helpers";
 import toast, { Toaster } from "react-hot-toast";
 import { addToCart } from "@/redux/shoppingSlice";
-import Toast from "./Toast";
 
 const ProductsData = ({ item }: ItemProps) => {
 	const dispatch = useDispatch();
